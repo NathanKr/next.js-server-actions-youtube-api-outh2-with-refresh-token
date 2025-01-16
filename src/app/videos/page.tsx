@@ -1,10 +1,8 @@
-import withAuthHOC, {
-  ServerComponentWithOauth2ClientProps,
-} from "@/components/hoc/with-auth";
+
 import { getUserVideos } from "@/logic/google-utils";
 import { FC } from "react";
 
-const VideosPage: FC<ServerComponentWithOauth2ClientProps> = async ({
+const VideosPage: FC = async ({
   oauth2Client,
 }) => {
   const videos = await getUserVideos(oauth2Client);
@@ -18,4 +16,4 @@ const VideosPage: FC<ServerComponentWithOauth2ClientProps> = async ({
   );
 };
 
-export default withAuthHOC(VideosPage);
+export default VideosPage;
