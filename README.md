@@ -1,20 +1,3 @@
-<h1>Project Status - remove when done</h1>
-<ul>
-<li>This is very early start , no coding is finish</li>
-<li>Need to fix the types . it seems that the server action function should have
-ServerActionArgs<T> as argument type and return R. some like
-
-```ts
-function withAuthHOF<T extends object, R>(
-  serverAction: (params: ServerActionArgs<T>) => Promise<R>
-) 
-```
-
-but need to use it all over and may be there are other options
-</li>
-<li>i have stop because i prefer to work on the API route solution whicj is what is have in post2youtube that use OAuth2 - step4Part1 = "/api/upload-video" </li>
-</ul>
-
 <h1>Project Name</h1>
 <p>Next.js Server Actions with OAuth2 </p>
 
