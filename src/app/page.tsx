@@ -9,6 +9,8 @@ export default function Home() {
       <Link href={Pages.UploadVideo}>UploadVideo</Link>
       <br />
       <Link href={Pages.Videos}>Get number of videos</Link>
+      <br />
+      <Link href={Pages.DebugClearSession}>Debug clear iron session</Link>
       <UserInfo />
       <Link href={Pages.Login}>Switch user</Link>
     </div>

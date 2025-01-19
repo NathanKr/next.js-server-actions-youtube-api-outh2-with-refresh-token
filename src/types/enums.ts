@@ -9,6 +9,7 @@ export enum Pages {
   Home = "/",
   Videos = "/videos",
   UploadVideo = "/upload-video",
+  DebugClearSession = "/debug-clear-session",
 }
 
 export enum ApiUrl {
