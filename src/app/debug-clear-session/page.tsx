@@ -1,10 +1,6 @@
 "use client";
 
 import { clearSession } from "@/actions/gen-actions";
-import {
-  BUTTON_TEXT_GET_NUM_VIDEOS,
-  BUTTON_TEXT_UPLOAD,
-} from "@/logic/constants";
 import { useState } from "react";
 
 export default function DebugClearSession() {
