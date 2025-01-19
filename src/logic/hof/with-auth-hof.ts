@@ -5,7 +5,7 @@ import { ServerActionArgs } from "@/types/types";
 export function withAuthHOF<T extends object, R>(
   serverAction: (params: ServerActionArgs<T>) => Promise<R>
 ) {
-  return async function (params: ServerActionArgs<T>) {
+  return async function (params: T) {
     const { oauth2Client, redirectTo } = await checkAndRefreshToken();
     if (redirectTo) {
       redirect(redirectTo);
@@ -14,7 +14,8 @@ export function withAuthHOF<T extends object, R>(
     if (!oauth2Client) {
       return null; // Ensure function stops if redirection is needed
     }
-    return await serverAction({ ...params });
+    const augmentedParams: ServerActionArgs<T> = { ...params, oauth2Client };
+    return await serverAction(augmentedParams);
   };
 }
 

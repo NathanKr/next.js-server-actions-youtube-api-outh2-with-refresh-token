@@ -1,12 +1,11 @@
 
-import { getUserVideos } from "@/logic/google-utils";
+import { getUserVideosWithAuth } from "@/actions/actions";
 import { FC } from "react";
 
-const VideosPage: FC = async ({
-  oauth2Client,
-}) => {
-  const videos = await getUserVideos(oauth2Client);
+const VideosPage: FC = async () => {
+  const videos = await getUserVideosWithAuth({});
   const videoCount = videos?.length || 0;
+  // const videoCount = -999;
 
   return (
     <div>
