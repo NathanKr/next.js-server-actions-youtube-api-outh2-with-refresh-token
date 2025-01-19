@@ -8,6 +8,9 @@ import { concatUrls } from "./gen-utils";
 import { getServerUrl } from "./project-utils";
 import { OAuth2Client } from "google-auth-library";
 
+// -- i prefer to put here close to where is is used
+const REDIRECT_TO_LOGIN_REQUIRED = `${Pages.Login}/?status=${LoginStatus.LoginRequired}`;
+
 export async function checkAndRefreshToken(): Promise<{
   oauth2Client: OAuth2Client | null;
   redirectTo?: string;
@@ -21,7 +24,7 @@ export async function checkAndRefreshToken(): Promise<{
     if (!accessToken) {
       return {
         oauth2Client: null,
-        redirectTo: `${Pages.Login}/?status=${LoginStatus.LoginRequired}`,
+        redirectTo: REDIRECT_TO_LOGIN_REQUIRED,
       };
     }
 
@@ -39,7 +42,7 @@ export async function checkAndRefreshToken(): Promise<{
         console.error("Invalid refresh token response:", response.data);
         return {
           oauth2Client: null,
-          redirectTo: `${Pages.Login}/?status=${LoginStatus.LoginRequired}`,
+          redirectTo: REDIRECT_TO_LOGIN_REQUIRED,
         };
       }
       oauth2Client.setCredentials(newTokens);
@@ -53,7 +56,7 @@ export async function checkAndRefreshToken(): Promise<{
     console.error("Error in checkAndRefreshToken:", error);
     return {
       oauth2Client: null,
-      redirectTo: `${Pages.Login}/?status=${LoginStatus.LoginRequired}`,
+      redirectTo: REDIRECT_TO_LOGIN_REQUIRED,
     };
   }
 }

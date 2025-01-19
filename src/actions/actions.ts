@@ -1,6 +1,6 @@
 "use server";
 
-import {  uploadVideo } from "@/logic/google-utils";
+import { uploadVideo } from "@/logic/google-utils";
 import { withAuthHOF } from "@/logic/hof/with-auth-hof";
 import {
   UploadVideoParams,
@@ -30,7 +30,6 @@ const loadUploadVideo = async ({
   );
   return { uploaded, title };
 };
-
 
 export async function getUserVideos({
   oauth2Client,
@@ -67,6 +66,7 @@ export async function getUserVideos({
     throw error;
   }
 }
+
 const loadUploadVideoWithAuth = withAuthHOF<
   UploadVideoParams,
   UploadVideoResult
@@ -75,6 +75,5 @@ const loadUploadVideoWithAuth = withAuthHOF<
 const getUserVideosWithAuth = withAuthHOF<UserVideosParams, UserVideosResult>(
   getUserVideos
 );
-
 
 export { loadUploadVideoWithAuth, getUserVideosWithAuth };
