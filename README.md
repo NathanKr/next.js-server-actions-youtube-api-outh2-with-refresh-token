@@ -1,14 +1,33 @@
+
 <h1>Project Name</h1>
  Next.js server actions with OAuth2 , YouTube API and refresh tokens 
 
 <h2>Project Description</h2>
-...
+This Next.js App Router Project uses the YouTube API from the server for 
+<ul>
+<li>uploading video to your YouTube channel</li>
+<li>get number of videos in your YouTube channel</li>
+</ul>
+It utilizes server actions , OAuth2 , iron session , refresh token , suspense and HOF (High Order Function)
 
 <h2>Motivation</h2>
-Elegantly handle server actions with OAuth2 and YouTube API and refresh token
+I allready have a solution of pages router project with api routes based solution for handling in next.js OAuth2 + YouTube API + refresh token <a id='reference1'>[1]</a> . But how to do it with server actions instead of api routes ? the solution is i this repo
 
 <h2>Installation</h2>
-...
+
+
+pnpm i 
+
+<h3>google cloud project</h3>
+...........
+ 
+<h3>.env.local</h3>
+
+This file is in .gitignore
+<img src='./figs/env-local.png'/>
+
+<h3>scopes</h3>
+........
 
 <h2>Usage</h2>
 ...
@@ -16,7 +35,6 @@ Elegantly handle server actions with OAuth2 and YouTube API and refresh token
 <h2>Design</h2>
 
 <h3>1. Utility function to check and refresh token</h3>
-todo nath : seems that its either OAuth2Client or redirectTo
 
 ```ts
 function checkAndRefreshToken(): Promise<{
@@ -72,10 +90,6 @@ const VideosPage: FC = async () => {
 ```
 
 
-
-<h2>Code Structure</h2>
-...
-
 <h2>Demo</h2>
 ...
 
@@ -87,6 +101,6 @@ const VideosPage: FC = async () => {
 
 <h2>References</h2>
 <ol>
-    <li><a href='https://www.youtube.com/watch?v=jD6u7X2rYew'>Next.js YouTube API Tutorial: Authentication and Refresh Token</a></li>
+    <li id='reference1'><a href='https://www.youtube.com/watch?v=jD6u7X2rYew'>Next.js YouTube API Tutorial: Authentication and Refresh Token</a></li>
    
 </ol>
