@@ -6,7 +6,7 @@
 This project leverages Next.js's App Router to interact with the YouTube API on the server. It allows you to:
 <ul>
 <li>Uploading video to your YouTube channel</li>
-<li>Get number of videos in your YouTube channel</li>
+<li>Get number of videos in your YouTube channel (limited to 10 videos)</li>
 </ul>
 
 <h2>Technologies Used</h2> 
@@ -133,8 +133,7 @@ const VideosPage: FC = async () => {
 
 Below is an image of the home page with buttons:
 
-<ul> <
-li><strong>Upload Video</strong>: Navigate to the server component under <code>app/upload-video</code> and upload a video from the data folder to your YouTube channel.</li> 
+<ul> <li><strong>Upload Video</strong>: Navigate to the server component under <code>app/upload-video</code> and upload a video from the data folder to your YouTube channel.</li> 
 <li><strong>Get Number of Videos</strong>: Navigate to the server component under <code>app/videos</code> and get the number of videos in your YouTube channel (limited to 10).</li> 
 <li><strong>Debug Clear Iron Session</strong>: Use this to invalidate the OAuth2 object.</li> 
 <li><strong>Switch User</strong>: Choose the Gmail account of your YouTube channel to authenticate with.</li> 
